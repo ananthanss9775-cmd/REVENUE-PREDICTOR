@@ -1,0 +1,343 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home | Enterprise Revenue Predictor{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="hero-label">
+                    <i class="bi bi-stars"></i>
+                    MACHINE LEARNING POWERED ANALYTICS
+                </span>
+
+                <h1 class="hero-title">
+                    Predict Enterprise
+                    <span>Revenue</span>
+                    With Intelligence.
+                </h1>
+
+                <p class="hero-description">
+                    An intelligent revenue prediction system that uses
+                    enterprise characteristics and machine learning to
+                    estimate business revenue and support data-driven
+                    decision making.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('predict') }}"
+                       class="btn-primary-custom">
+                        Start Prediction
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                    <a href="#overview" class="btn-outline-custom">
+                        Explore Project
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <h3>1,755</h3>
+                        <p>Dataset Records</p>
+                    </div>
+
+                    <div>
+                        <h3>28</h3>
+                        <p>Dataset Features</p>
+                    </div>
+
+                    <div>
+                        <h3>79.51%</h3>
+                        <p>Model R² Score</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="hero-card">
+
+                    <div class="dashboard-heading">
+                        <div>
+                            <span>REVENUE ANALYTICS</span>
+                            <h4>Prediction Overview</h4>
+                        </div>
+
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <div class="chart-placeholder">
+
+                        <div class="chart-bars">
+                            <div style="height:35%"></div>
+                            <div style="height:55%"></div>
+                            <div style="height:45%"></div>
+                            <div style="height:75%"></div>
+                            <div style="height:60%"></div>
+                            <div style="height:90%"></div>
+                            <div style="height:80%"></div>
+                        </div>
+
+                        <div class="chart-labels">
+                            <span>01</span>
+                            <span>02</span>
+                            <span>03</span>
+                            <span>04</span>
+                            <span>05</span>
+                            <span>06</span>
+                            <span>07</span>
+                        </div>
+
+                    </div>
+
+                    <div class="model-info">
+                        <div>
+                            <i class="bi bi-cpu"></i>
+                            <span>Gradient Boosting Regressor</span>
+                        </div>
+
+                        <span class="model-status">Trained Model</span>
+                    </div>
+
+                    <div class="accuracy-box">
+                        <div>
+                            <small>MODEL PERFORMANCE</small>
+                            <h2>0.7951</h2>
+                            <p>R² Score</p>
+                        </div>
+
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECT OVERVIEW -->
+<section class="overview-section" id="overview">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>ABOUT THE PROJECT</span>
+
+            <h2>Enterprise Revenue Prediction System</h2>
+
+            <p>
+                A machine learning based solution designed to estimate
+                enterprise revenue using important business
+                characteristics and financial indicators.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+
+                    <h4>Data Analysis</h4>
+
+                    <p>
+                        Enterprise characteristics dataset containing
+                        1,755 records and 28 features was analyzed
+                        to identify important business patterns.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+
+                    <h4>Machine Learning</h4>
+
+                    <p>
+                        Multiple regression algorithms were compared.
+                        Gradient Boosting Regressor was selected as
+                        the best-performing model.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h4>Revenue Prediction</h4>
+
+                    <p>
+                        Predict enterprise revenue using financial
+                        indicators, employee information and
+                        organizational characteristics.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT OBJECTIVES -->
+<section class="objectives-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>PROJECT OBJECTIVES</span>
+            <h2>What This System Provides</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="objective-card">
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <div>
+                        <h5>Understand Enterprise Characteristics</h5>
+                        <p>
+                            Analyze financial and organizational
+                            factors that influence enterprise revenue.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="objective-card">
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <div>
+                        <h5>Estimate Future Revenue</h5>
+                        <p>
+                            Generate revenue estimates using a
+                            trained machine learning regression model.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="objective-card">
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <div>
+                        <h5>Support Business Decisions</h5>
+                        <p>
+                            Provide useful predictive insights
+                            for enterprise-level analysis.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="objective-card">
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <div>
+                        <h5>Apply Machine Learning</h5>
+                        <p>
+                            Implement a complete prediction
+                            workflow using Python and Flask.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MACHINE LEARNING MODEL -->
+<section class="model-section">
+
+    <div class="container">
+
+        <div class="model-banner">
+
+            <div>
+                <span>SELECTED MACHINE LEARNING MODEL</span>
+
+                <h2>Gradient Boosting Regressor</h2>
+
+                <p>
+                    Selected after comparing Linear Regression,
+                    Ridge Regression, Random Forest Regressor
+                    and Gradient Boosting Regressor.
+                </p>
+            </div>
+
+            <div class="model-score">
+                <h2>79.51%</h2>
+                <span>R² Score</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="cta-section">
+
+    <div class="container text-center">
+
+        <h2>Ready to Predict Enterprise Revenue?</h2>
+
+        <p>
+            Enter enterprise details and discover the estimated
+            revenue generated by our machine learning model.
+        </p>
+
+        <a href="{{ url_for('predict') }}"
+           class="btn-primary-custom">
+            Go to Prediction Page
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

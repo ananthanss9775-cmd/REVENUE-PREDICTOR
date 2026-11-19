@@ -1,0 +1,92 @@
+
+{% extends "base.html" %}
+
+{% block title %}Prediction Result | Revenue Predictor{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Revenue Prediction Result</h1>
+                <p class="text-muted">
+                    Your enterprise revenue estimate is ready.
+                </p>
+            </div>
+
+            <div class="card shadow border-0 rounded-4 mb-4">
+                <div class="card-body text-center p-5">
+
+                    <div class="mb-3">
+                        <span class="badge bg-success fs-6 px-3 py-2">
+                            Prediction Completed
+                        </span>
+                    </div>
+
+                    <h5 class="text-muted mb-3">
+                         Estimated Revenue (Currency Unspecified)
+                    </h5>
+
+                    <h1 class="display-4 fw-bold text-primary">
+                        {{ "{:,.2f}".format(prediction) }}
+                    </h1>
+
+                    <p class="text-muted">
+                         This is a model-generated estimate. The currency cannot be
+                         determined because the training dataset contains multiple currencies.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <h4 class="fw-bold mb-3">
+                        Enterprise Information
+                    </h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th class="text-end">Input Value</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for feature, value in enterprise_details.items() %}
+                                <tr>
+                                    <td>{{ feature.replace("_", " ").title() }}</td>
+                                    <td class="text-end">{{ value }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{{ url_for('predict') }}"
+                   class="btn btn-primary btn-lg me-2">
+                    Predict Again
+                </a>
+
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-outline-secondary btn-lg">
+                    Back to Home
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

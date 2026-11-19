@@ -1,0 +1,393 @@
+
+/* ============================= */
+/* HOME PAGE HERO SECTION */
+/* ============================= */
+
+.hero-section {
+    background: linear-gradient(120deg, #101b35, #1c315c);
+    padding: 85px 0;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #a8bcff;
+    background: #ffffff12;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+.hero-title span {
+    color: #829cff;
+}
+
+.hero-description {
+    color: #c3cce0;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 580px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-outline-custom {
+    color: white;
+    border: 1px solid #ffffff66;
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+    background: white;
+    color: #101b35;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 55px;
+    flex-wrap: wrap;
+}
+
+.hero-stats h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #91a8ff;
+}
+
+.hero-stats p {
+    color: #bdc8df;
+    font-size: 12px;
+}
+
+
+/* HERO DASHBOARD CARD */
+
+.hero-card {
+    background: white;
+    color: #172033;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px #00000030;
+}
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-heading span {
+    font-size: 10px;
+    color: #76829a;
+    font-weight: 700;
+}
+
+.dashboard-heading h4 {
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.dashboard-heading i {
+    font-size: 28px;
+    color: #526fe5;
+}
+
+.chart-placeholder {
+    height: 180px;
+    margin-top: 25px;
+    border-bottom: 1px solid #e8ebf2;
+}
+
+.chart-bars {
+    height: 145px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    gap: 12px;
+    padding: 0 10px;
+}
+
+.chart-bars div {
+    flex: 1;
+    background: linear-gradient(#819cff, #526fe5);
+    border-radius: 6px 6px 0 0;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    color: #8791a5;
+    padding-top: 8px;
+}
+
+.model-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.model-info i {
+    color: #526fe5;
+    margin-right: 5px;
+}
+
+.model-status {
+    color: #168653;
+    background: #e5f7ed;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.accuracy-box {
+    background: #f0f3ff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accuracy-box small {
+    color: #75809a;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.accuracy-box h2 {
+    color: #405acb;
+    font-weight: 800;
+    margin: 5px 0;
+}
+
+.accuracy-box p {
+    color: #75809a;
+    margin: 0;
+    font-size: 12px;
+}
+
+.accuracy-box > i {
+    font-size: 35px;
+    color: #526fe5;
+}
+
+
+/* OVERVIEW SECTION */
+
+.overview-section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: #526fe5;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: auto;
+    color: #748096;
+    line-height: 1.8;
+}
+
+.overview-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e8ebf2;
+    border-radius: 14px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.overview-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px #17203312;
+}
+
+.overview-icon {
+    background: #edf1ff;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: #526fe5;
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.overview-card h4 {
+    font-weight: 750;
+    margin-bottom: 15px;
+}
+
+.overview-card p {
+    color: #748096;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* OBJECTIVES */
+
+.objectives-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.objective-card {
+    display: flex;
+    gap: 18px;
+    padding: 25px;
+    border: 1px solid #e8ebf2;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.objective-card > i {
+    color: #526fe5;
+    font-size: 23px;
+}
+
+.objective-card h5 {
+    font-weight: 700;
+}
+
+.objective-card p {
+    color: #748096;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+
+/* MODEL SECTION */
+
+.model-section {
+    padding: 70px 0;
+}
+
+.model-banner {
+    background: linear-gradient(120deg, #18274a, #405acb);
+    color: white;
+    padding: 40px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.model-banner span {
+    color: #b9c9ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.model-banner h2 {
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.model-banner p {
+    color: #d3dcf3;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.model-score {
+    text-align: center;
+    background: #ffffff18;
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 150px;
+}
+
+.model-score h2 {
+    font-size: 35px;
+}
+
+
+/* CALL TO ACTION */
+
+.cta-section {
+    background: white;
+    padding: 75px 15px;
+}
+
+.cta-section h2 {
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    color: #748096;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+
+/* RESPONSIVE HOME PAGE */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 55px 0;
+    }
+
+    .hero-card {
+        margin-top: 45px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .model-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+}

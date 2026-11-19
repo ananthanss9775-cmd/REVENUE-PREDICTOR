@@ -1,0 +1,264 @@
+
+{% extends "base.html" %}
+
+{% block title %}Predict Revenue | Revenue Predictor{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Page Heading -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Enterprise Revenue Prediction</h1>
+        <p class="text-muted">
+            Enter the company's financial and organizational details
+            to estimate its revenue.
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <!-- Error Message -->
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show"
+                 role="alert">
+                {{ error }}
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="alert"></button>
+            </div>
+            {% endif %}
+
+            <!-- Prediction Form -->
+            <div class="card shadow border-0 rounded-4">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <form method="POST"
+                          action="{{ url_for('predict') }}">
+
+                        <!-- Financial Information -->
+                        <h4 class="fw-bold mb-4">
+                            <i class="bi bi-currency-dollar"></i>
+                            Financial Information
+                        </h4>
+
+                        <div class="row g-4">
+
+                            <!-- Net Income -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Net Income
+                                </label>
+
+                                <input type="number"
+                                       step="any"
+                                       min="0"
+                                       name="net_income"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter net income"
+                                       value="{{ request.form.get('net_income', '') }}"
+                                       required>
+                            </div>
+
+                            <!-- Market Capitalization -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Market Capitalization
+                                </label>
+
+                                <input type="number"
+                                       step="any"
+                                       min="0"
+                                       name="market_cap"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter market capitalization"
+                                       value="{{ request.form.get('market_cap', '') }}"
+                                       required>
+                            </div>
+
+                            <!-- Employees -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Number of Employees
+                                </label>
+
+                                <input type="number"
+                                       step="1"
+                                       min="0"
+                                       name="employees"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter employee count"
+                                       value="{{ request.form.get('employees', '') }}"
+                                       required>
+                            </div>
+
+                        </div>
+
+                        <hr class="my-5">
+
+                        <!-- Organizational Information -->
+                        <h4 class="fw-bold mb-4">
+                            <i class="bi bi-building"></i>
+                            Organizational Information
+                        </h4>
+
+                        <div class="row g-4">
+
+                            <!-- Legal Units -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Legal Units Count
+                                </label>
+
+                                <input type="number"
+                                       step="1"
+                                       min="0"
+                                       name="legal_units_count"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter legal units"
+                                       value="{{ request.form.get('legal_units_count', '') }}"
+                                       required>
+                            </div>
+
+                            <!-- Direct Subsidiaries -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Direct Subsidiaries Count
+                                </label>
+
+                                <input type="number"
+                                       step="1"
+                                       min="0"
+                                       name="direct_subsidiaries_count"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter subsidiaries"
+                                       value="{{ request.form.get('direct_subsidiaries_count', '') }}"
+                                       required>
+                            </div>
+
+                            <!-- Hierarchy Depth -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Maximum Hierarchy Depth
+                                </label>
+
+                                <input type="number"
+                                       step="1"
+                                       min="0"
+                                       name="max_hierarchy_depth"
+                                       class="form-control form-control-lg"
+                                       placeholder="Enter hierarchy depth"
+                                       value="{{ request.form.get('max_hierarchy_depth', '') }}"
+                                       required>
+                            </div>
+
+                            <!-- Company Type Dropdown -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    Company Type
+                                </label>
+
+                                <select name="company_type_encoded"
+                                        class="form-select form-select-lg"
+                                        required>
+
+                                    <option value="">
+                                        Select Company Type
+                                    </option>
+
+                                    <option value="0"
+                                        {% if request.form.get('company_type_encoded') == '0' %}selected{% endif %}>
+                                        NONPROFIT
+                                    </option>
+
+                                    <option value="1"
+                                        {% if request.form.get('company_type_encoded') == '1' %}selected{% endif %}>
+                                        OTHER
+                                    </option>
+
+                                    <option value="2"
+                                        {% if request.form.get('company_type_encoded') == '2' %}selected{% endif %}>
+                                        PRIVATE
+                                    </option>
+
+                                    <option value="3"
+                                        {% if request.form.get('company_type_encoded') == '3' %}selected{% endif %}>
+                                        PUBLIC
+                                    </option>
+
+                                    <option value="4"
+                                        {% if request.form.get('company_type_encoded') == '4' %}selected{% endif %}>
+                                        Private
+                                    </option>
+
+                                    <option value="5"
+                                        {% if request.form.get('company_type_encoded') == '5' %}selected{% endif %}>
+                                        Public
+                                    </option>
+
+                                    <option value="6"
+                                        {% if request.form.get('company_type_encoded') == '6' %}selected{% endif %}>
+                                        STATE_OWNED
+                                    </option>
+
+                                    <option value="7"
+                                        {% if request.form.get('company_type_encoded') == '7' %}selected{% endif %}>
+                                        Unknown
+                                    </option>
+
+                                    <option value="8"
+                                        {% if request.form.get('company_type_encoded') == '8' %}selected{% endif %}>
+                                        avolon.aero
+                                    </option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- Information Note -->
+                        <div class="alert alert-info mt-4">
+                            <strong>Note:</strong>
+                            Enter financial values using the same
+                            units and currency conventions as the
+                            original training dataset.
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid mt-4">
+
+                            <button type="submit"
+                                    class="btn btn-primary btn-lg rounded-3">
+
+                                <i class="bi bi-graph-up-arrow"></i>
+                                Predict Revenue
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="text-center mt-4">
+
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-outline-secondary">
+
+                    <i class="bi bi-house"></i>
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
